@@ -13,7 +13,6 @@
 
 <body>
   <script>
-    alert("hello")
     // if ('serviceWorker' in navigator) {
     //     window.addEventListener('load', () => {
     //         navigator.serviceWorker
@@ -28,7 +27,9 @@
     // }
 
     let installButton = document.createElement('button');
+    installButton.textContent = "install"
     let prompt;
+    document.body.appendChild(installButton)
     window.addEventListener('beforeinstallprompt', function (e) {
       // Prevent the mini-infobar from appearing on mobile
       e.preventDefault();
