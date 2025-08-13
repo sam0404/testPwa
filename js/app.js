@@ -3,7 +3,6 @@ let modal = document.getElementById("myModal");
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        modal.style.display = "block";
         navigator.serviceWorker
             .register('js/sw.js')
             .then(registration => {
@@ -16,6 +15,9 @@ if ('serviceWorker' in navigator) {
 }
 
 let installButton = document.getElementById('install');
+let closeButton = document.getElementById('close')
+
+closeButton.addEventListener('click', closeButton())
 
 function closeModal() {
     modal.style.display = "none";
@@ -23,6 +25,8 @@ function closeModal() {
 
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
+
+    modal.style.display = "block";
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
