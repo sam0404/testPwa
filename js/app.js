@@ -1,5 +1,9 @@
+
+let modal = document.getElementById("myModal");
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
+        modal.style.display = "block";
         navigator.serviceWorker
             .register('js/sw.js')
             .then(registration => {
@@ -11,9 +15,11 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-let installButton = document.createElement('button');
-installButton.textContent = "install"
-document.body.appendChild(installButton)
+let installButton = document.getElementById('install');
+
+function closeModal() {
+    modal.style.display = "none";
+}
 
 let prompt;
 window.addEventListener('beforeinstallprompt', function (e) {
