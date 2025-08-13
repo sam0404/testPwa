@@ -17,11 +17,10 @@ if ('serviceWorker' in navigator) {
 let installButton = document.getElementById('install');
 let closeButton = document.getElementById('close')
 
-closeButton.addEventListener('click', closeButton())
-
-function closeModal() {
+closeButton.addEventListener('click', () => {
     modal.style.display = "none";
-}
+})
+
 
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
