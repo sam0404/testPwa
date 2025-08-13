@@ -1,10 +1,11 @@
 
 let modal = document.getElementById("myModal");
 
+const userAgent = navigator.userAgent.toLowerCase();
+alert("userAgent " + userAgent)
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        const userAgent = navigator.userAgent.toLowerCase();
-        alert("userAgent " + userAgent)
         navigator.serviceWorker
             .register('js/sw.js')
             .then(registration => {
