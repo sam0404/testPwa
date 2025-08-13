@@ -21,17 +21,17 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-let prompt;
+let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
     // Stash the event so it can be triggered later.
-    prompt = e;
+    installEvent = e;
 });
 
 let installed = false;
 installButton.addEventListener('click', async function () {
-    prompt.prompt();
+    installEvent.prompt();
     let result = await that.prompt.userChoice;
     if (result && result.outcome === 'accepted') {
         installed = true;
