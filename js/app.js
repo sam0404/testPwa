@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 }
 
 let installButton = document.createElement('button');
-installButton.setContex = "install"
+installButton.textContent = "install"
 document.body.appendChild(installButton)
 
 let prompt;
