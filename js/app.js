@@ -25,7 +25,7 @@ closeButton.addEventListener('click', () => {
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
     const userAgent = navigator.userAgent.toLowerCase();
-    alert("userAgent ", userAgent)
+    alert("userAgent " + userAgent)
     modal.style.display = "block";
     // Prevent the mini-infobar from appearing on mobile
     e.preventDefault();
