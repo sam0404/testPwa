@@ -1,27 +1,9 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('js/sw.js')
-            .then(registration => {
-                console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch(error => {
-                console.error('Service Worker registration failed:', error);
-            });
-    });
-}
 
 let installButton = document.getElementById('install');
 let closeButton = document.getElementById('close')
-let modal = document.getElementById("myModal");
+let modal = document.getElementById("modal");
 
 
-let showBrowser = document.getElementById('showBrowser')
-showBrowser.addEventListener('click', () => {
-
-    const userAgent = navigator.userAgent.toLowerCase();
-    alert("userAgent " + userAgent)
-})
 closeButton.addEventListener('click', () => {
     modal.style.display = "none";
 })

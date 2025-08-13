@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "toloto",
+    "slug": "toloto",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "toloto",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.siamion.toloto",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.siamion.toloto"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4b9f1af1-94fa-4f4b-aaff-ea6f2f3278c6"
+      }
+    },
+    "owner": "siamion",
+    "plugins": [
+      "expo-web-browser"
+    ]
+  },
+  "plugins": [
+    "expo-router",
+    [
+      "expo-splash-screen",
+      {
+        "image": "./assets/images/splash-icon.png",
+        "imageWidth": 200,
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      }
+    ],
+    "expo-notifications",
+    {
+      "icon": "./assets/notification-icon.png",
+      "color": "#ffffff"
+    }
+  ],
+  "experiments": {
+    "typedRoutes": true
+  },
+  "extra": {
+    "router": {},
+    "eas": {
+      "projectId": "4b9f1af1-94fa-4f4b-aaff-ea6f2f3278c6"
+    }
+  },
+  "owner": "siamion"
+}
