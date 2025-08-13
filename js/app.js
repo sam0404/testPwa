@@ -32,7 +32,7 @@ window.addEventListener('beforeinstallprompt', async function (e) {
     e.preventDefault();
     // Stash the event so it can be triggered later.
     //installEvent = e;
-    installEvent.prompt();
+    e.prompt();
     let result = await that.prompt.userChoice;
     if (result && result.outcome === 'accepted') {
         installed = true;
