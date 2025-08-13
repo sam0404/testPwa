@@ -8,7 +8,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/testPwa/",
+    "start_url": "index.html",
     "orientation": "portrait-primary",
     "display": "fullscreen",
     "theme_color": "#000000",
