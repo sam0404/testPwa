@@ -12,6 +12,8 @@ if ('serviceWorker' in navigator) {
 }
 
 let installButton = document.createElement('button');
+installButton.setContex = "install"
+document.body.appendChild(installButton)
 
 let prompt;
 window.addEventListener('beforeinstallprompt', function (e) {
