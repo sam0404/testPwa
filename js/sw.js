@@ -3,7 +3,9 @@ self.addEventListener('fetch', function (event) {
         try {
             var res = await fetch(event.request);
             var cache = await caches.open('cache');
-            cache.put(event.request.url, res.clone());
+            console.warn("cache", cache)
+            console.warn("res", res)
+            //cache.put(event.request.url, res.clone());
             return res;
         }
         catch (error) {
