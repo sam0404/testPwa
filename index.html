@@ -1554,8 +1554,8 @@
                 </head>
 
                 <body>
-                    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.5);z-index:100;display:flex;justify-content:center;align-items:center"
-                        id="modal" hidden>
+                    <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.5);z-index:100;display:flex;justify-content:center;align-items:center;display:none;"
+                        id="modal">
                         <div
                             style="background-color:rgba(100, 100, 100, 0.85);border-radius:10px;padding:30px;width:300px;text-align:center;box-shadow:0 4px 8px rgba(0, 0, 0, 0.3);">
                             <div
@@ -1572,36 +1572,39 @@
 
                     <script>
 
-                        let installButton = document.getElementById('install');
-                        let closeButton = document.getElementById('close')
-                        let modal = document.getElementById("modal");
-                        modal.style.display = "none";
-
-                        closeButton.addEventListener('click', () => {
+                        window.addEventListener('load', () => {
+                            let installButton = document.getElementById('install');
+                            let closeButton = document.getElementById('close')
+                            let modal = document.getElementById("modal");
                             modal.style.display = "none";
+
+                            closeButton.addEventListener('click', () => {
+                                modal.style.display = "none";
+                            })
+
+
+                            let installEvent = null;
+                            window.addEventListener('beforeinstallprompt', function (e) {
+
+                                modal.style.display = "block";
+                                e.preventDefault();
+                                installEvent = e;
+                            });
+
+                            let installed = false;
+                            installButton.addEventListener('click', async function () {
+                                installEvent.prompt();
+                                let result = await that.prompt.userChoice;
+                                if (result && result.outcome === 'accepted') {
+                                    installed = true;
+                                }
+                            })
+
+                            window.addEventListener('appinstalled', async function (e) {
+                                installButton.style.display = "none";
+                            });
                         })
 
-
-                        let installEvent = null;
-                        window.addEventListener('beforeinstallprompt', function (e) {
-
-                            modal.style.display = "block";
-                            e.preventDefault();
-                            installEvent = e;
-                        });
-
-                        let installed = false;
-                        installButton.addEventListener('click', async function () {
-                            installEvent.prompt();
-                            let result = await that.prompt.userChoice;
-                            if (result && result.outcome === 'accepted') {
-                                installed = true;
-                            }
-                        })
-
-                        window.addEventListener('appinstalled', async function (e) {
-                            installButton.style.display = "none";
-                        });
                     </script>
                 </body>
 
