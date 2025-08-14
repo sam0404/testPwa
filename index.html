@@ -1576,8 +1576,8 @@
                             let installButton = document.getElementById('install');
                             let closeButton = document.getElementById('close')
                             let modal = document.getElementById("modal");
-                            modal.style.display = "none";
 
+                            alert("load")
                             closeButton.addEventListener('click', () => {
                                 modal.style.display = "none";
                             })
@@ -1585,7 +1585,6 @@
 
                             let installEvent = null;
                             window.addEventListener('beforeinstallprompt', function (e) {
-
                                 modal.style.display = "block";
                                 e.preventDefault();
                                 installEvent = e;
