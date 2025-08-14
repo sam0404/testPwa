@@ -318,7 +318,7 @@ input::-webkit-search-cancel-button,input::-webkit-search-decoration,input::-web
 @keyframes r-t2lo5v{0%{opacity:1;}100%{opacity:0;}}</style><script type="module">globalThis.__EXPO_ROUTER_HYDRATE__=true;</script><link rel="icon" href="/favicon.ico" /></head><body><div id="root"><div class="css-g5y9jx r-13awgt0"><!--$--><div class="css-g5y9jx" style="flex:1;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px"><!--$--><html><head><link rel="stylesheet" href="style.css"/><script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then(registration => {
+        navigator.serviceWorker.register('sw.js').then(registration => {
             console.log('Service Worker registered with scope:', registration.scope);
         }).catch(error => {
             console.error('Service Worker registration failed:', error);
@@ -326,10 +326,9 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-
-let installButton = document.body.getElementById('install');
-let closeButton = document.body.getElementById('close')
-let modal = document.body.getElementById("modal");
+let installButton = document.getElementById('#install');
+let closeButton = document.getElementById('#close')
+let modal = document.getElementById("#modal");
 
 
 closeButton.addEventListener('click', () => {
@@ -357,5 +356,5 @@ installButton.addEventListener('click', async function () {
 window.addEventListener('appinstalled', async function (e) {
     installButton.style.display = "none";
 });
-</script></head><body><div style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.5);z-index:100;display:flex;justify-content:center;align-items:center" id="modal"><div style="background-color:rgba(100, 100, 100, 0.85);border-radius:10px;padding:30px;width:300px;text-align:center;box-shadow:0 4px 8px rgba(0, 0, 0, 0.3);"><div style="color:white;font-size:24px;margin-bottom:30px;text-shadow-color:black;text-shadow-radius:2px">То!Лото</div><button style="display:flex;width:100%;padding:12px;margin-top:10px;margin-bottom:10px;margin-left:0;margin-right:0;border-radius:5px;border-width:0;background-color:#4a6fa5;color:white;font-size:16px;cursor:pointer" id="install">Установить</button><button style="display:flex;width:100%;padding:12px;margin-top:10px;margin-bottom:10px;margin-left:0;margin-right:0;border-radius:5px;border-width:0;background-color:#4a6fa5;color:white;font-size:16px;cursor:pointer" id="close">Отмена</button></div></div><iframe src="https://example.com/" width="100%" height="100%"></iframe><script src="app.js"></script><script src="/_expo/static/js/web/entry-cf797ce4412fb32cce024dc9369ce504.js" defer></script>
+</script></head><body><div style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.5);z-index:100;display:flex;justify-content:center;align-items:center" id="modal"><div style="background-color:rgba(100, 100, 100, 0.85);border-radius:10px;padding:30px;width:300px;text-align:center;box-shadow:0 4px 8px rgba(0, 0, 0, 0.3);"><div style="color:white;font-size:24px;margin-bottom:30px;text-shadow-color:black;text-shadow-radius:2px">То!Лото</div><button style="display:flex;width:100%;padding:12px;margin-top:10px;margin-bottom:10px;margin-left:0;margin-right:0;border-radius:5px;border-width:0;background-color:#4a6fa5;color:white;font-size:16px;cursor:pointer" id="install">Установить</button><button style="display:flex;width:100%;padding:12px;margin-top:10px;margin-bottom:10px;margin-left:0;margin-right:0;border-radius:5px;border-width:0;background-color:#4a6fa5;color:white;font-size:16px;cursor:pointer" id="close">Отмена</button></div></div><iframe src="https://example.com/" width="100%" height="100%"></iframe><script src="app.js"></script><script src="/_expo/static/js/web/entry-3061334bed6ed023e7681db6f6587a07.js" defer></script>
 </body></html><!--/$--></div><!--/$--></div></div></body></html>
